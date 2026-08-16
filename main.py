@@ -12,6 +12,8 @@ from numpy.linalg import norm
 
 feature_list = np.array(pickle.load(open('embeddings.pkl','rb')))
 filenames = pickle.load(open('filenames.pkl','rb'))
+st.write("First filename:", filenames[0])
+st.write("File exists:", os.path.exists(filenames[0]))
 
 model = ResNet50(weights='imagenet',include_top=False,input_shape=(224,224,3))
 model.trainable = False
